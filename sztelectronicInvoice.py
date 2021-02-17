@@ -4,7 +4,7 @@ import webbrowser
 from selenium import webdriver
 
 
-date = 19700101                                                                     #更改为当前发票的日期 格式为yyyymmdd
+date = 19700101                                                                                          #更改为当前发票的日期 格式为yyyymmdd
 while 1:
 	cardnum = input('卡号:')
 	webbrowser.open("http://www.shenzhentong.com/ajax/WaterMark.ashx")
@@ -22,7 +22,7 @@ while 1:
 		"Origin": "http://www.shenzhentong.com",
 		"Connection": "close",
 		"Referer": "http://www.shenzhentong.com/service/invoice_101007009.html",
-		"Cookie": "" #在双引号内填写浏览器的cookie
+		"Cookie": ""                                                                              #在双引号内填写浏览器的cookie
 	}
 	url = "http://www.shenzhentong.com/Ajax/ElectronicInvoiceAjax.aspx"
 
@@ -39,9 +39,9 @@ while 1:
 	driver = webdriver.Firefox()
 	driver.get("http://www.shenzhentong.com/service/invoice_101007009.html")
 	driver.delete_all_cookies()
-	cookie1 = {'value': '','name': 'HWWAFSESID'}                                                #在引号内填写浏览器的cookie
+	cookie1 = {'value': '','name': 'HWWAFSESID'}                                                     #在引号内填写浏览器的cookie
 	cookie2 = {'value': '','name': 'HWWAFSESTIME'}                                                   #在引号内填写浏览器的cookie
-	cookie3 = {'value': '','name': 'ASP.NET_SessionId'}                                   #在引号内填写浏览器的cookie
+	cookie3 = {'value': '','name': 'ASP.NET_SessionId'}                                              #在引号内填写浏览器的cookie
 	
 	driver.add_cookie(cookie_dict = cookie1)
 	driver.add_cookie(cookie_dict = cookie2)
@@ -54,13 +54,13 @@ while 1:
 	driver.find_element_by_name("first_res").click()
 	driver.find_element_by_id("firmfpmc").click()
 	driver.find_element_by_id("firmfpmc").clear()
-	driver.find_element_by_id("firmfpmc").send_keys("")       #在双引号内填写你的公司名称
+	driver.find_element_by_id("firmfpmc").send_keys("")                                               #在双引号内填写你的公司名称
 	driver.find_element_by_id("firmsbh").click()
 	driver.find_element_by_id("firmsbh").clear()
-	driver.find_element_by_id("firmsbh").send_keys("")             #在双引号内填写您的纳税识别号
+	driver.find_element_by_id("firmsbh").send_keys("")                                                #在双引号内填写您的纳税识别号
 	driver.find_element_by_id("firmphone").click()
 	driver.find_element_by_id("firmphone").clear()
-	driver.find_element_by_id("firmphone").send_keys("")                  #在双引号内填写手机号码
+	driver.find_element_by_id("firmphone").send_keys("")                                              #在双引号内填写手机号码
 	driver.find_element_by_name("first_res").click()
 	driver.find_element_by_xpath(u"(//input[@value='提交'])[2]").click()
 	
